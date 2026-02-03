@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>J&J Branding Co. | Graphic Arts + Media Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      background-color: #f7f7f7;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo img {
+      width: 60px;
+    }
+
+    .nav-logo span {
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #111;
+      transition: width 0.25s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #111;
+      color: #fff;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #111;
+      border: 1px solid #111;
+    }
+
+    .btn-outline:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 3.5rem 0 3rem;
+      background: #fafafa;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-logo-wrap {
+      width: 170px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      margin-bottom: 1.2rem;
+      max-width: 520px;
+    }
+
+    .hero-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #777;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 0.6rem;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .hero-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* Sections */
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      text-align: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+      max-width: 550px;
+      margin: 0 auto 2.2rem;
+    }
+
+    /* Services */
+    .service-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .service-tabs button {
+      background: #fff;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+    }
+
+    .service-tabs button.active {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pricing-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+    }
+
+    .pricing-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #888;
+      margin-bottom: 0.7rem;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing-card ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-card small {
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    .tier-desc {
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 0.2rem;
+      margin-bottom: 0.9rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-meta {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .about-highlight {
+      background: #111;
+      color: #fff;
+      display: inline-block;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-top: 0.5rem;
+    }
+
+    .about-photo {
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Mission */
+    .mission {
+      background: #111;
+      color: #f9f9f9;
+    }
+
+    .mission-inner {
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .mission h2 {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.75rem;
+    }
+
+    .mission p {
+      font-size: 0.98rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .mission-quote {
+      font-size: 0.95rem;
+      font-style: italic;
+      margin-top: 0.7rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .contact-details p {
+      font-size: 0.92rem;
+      margin-bottom: 0.5rem;
+    }
+
+    form {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+      border: 1px solid #eee;
+    }
+
+    form label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.25rem;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    form input:focus,
+    form textarea:focus,
+    form select:focus {
+      border-color: #111;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    footer {
+      padding: 1.4rem 0 1.8rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #777;
+    }
+
+    footer span {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    footer a {
+      text-decoration: underline;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+
+  <script>
+    // Simple tab-like behavior for scrolling to each service category
+    function scrollToService(id, button) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      const buttons = document.querySelectorAll(".service-tabs button");
+      buttons.forEach((b) => b.classList.remove("active"));
+      if (button) button.classList.add("active");
+    }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="nav-bar">
+        <div class="nav-logo">
+          <!-- LOGO 5.png -->
+          <img src="5.png" alt="J&J Branding Co. logo" />
+          <span>J&J BRANDING CO.</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-logo-wrap">
+            <img src="5.png" alt="J&J Branding Co. logo" />
+          </div>
+          <div class="hero-tag">Graphic Arts + Media Management</div>
+          <h1>Digital & Web Design for Brands Ready to Grow</h1>
+          <p>
+            J&J Branding Co. partners with small business owners and entrepreneurs to build
+            modern websites, memorable logos, and stress-free hosting and maintenance solutions.
+            Strategy, visuals, and tech—handled under one creative studio.
+          </p>
+          <div class="hero-cta">
+            <a href="#services" class="btn btn-primary">View Service Packages</a>
+            <a href="#contact" class="btn btn-outline">Book a Discovery Call</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>Managed Digital Design Studio</h3>
+          <p>
+            From Canva to custom Wix builds and AWS-powered hosting, J&J Branding Co. blends
+            visual storytelling with reliable web infrastructure—so your online presence looks
+            polished and runs smoothly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services & Pricing</h2>
+      <p class="section-subtitle">
+        Three clear tiers in each category—designed to meet you where your business is today,
+        and support where you want it to grow next.
+      </p>
+
+      <!-- Service "tabs" as active buttons -->
+      <div class="service-tabs">
+        <button class="active" onclick="scrollToService('website-design', this)">Website Design</button>
+        <button onclick="scrollToService('logo-design', this)">Logo Design</button>
+        <button onclick="scrollToService('host-management', this)">Website Host Management</button>
+      </div>
+
+      <!-- Website Design -->
+      <div id="website-design" style="margin-bottom:3rem;">
+        <h3 class="section-title" style="font-size:1.1rem;">Website Design Packages</h3>
+        <p class="section-subtitle">
+          Built in Wix or custom platforms, optimized for mobile, and crafted to fit your brand.
+        </p>
+
+        <div class="services-grid">
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 1 · Starter</div>
+              <h3>Launch Site</h3>
+              <div class="price">$450</div>
+              <p class="tier-desc">
+                Best for new businesses needing a clean, professional site fast—focused on clarity, trust, and conversion.
+              </p>
+              <ul>
+                <li>Single-page or 2-page scroll site</li>
+                <li>Custom layout within brand colors</li>
+                <li>Mobile-responsive design</li>
+                <li>1 round of revisions</li>
+                <li>Basic contact form integration</li>
+              </ul>
+            </div>
+            <small>Perfect for new businesses and personal brands needing a clean, simple launch.</small>
+          </div>
+
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 2 · Growth</div>
+              <h3>Growth Site</h3>
+              <div class="price">$750</div>
+              <p class="tier-desc">
+                Great for growing brands that need multiple pages, stronger user flow, and a more complete online presence.
+              </p>
+              <ul>
+                <li>Up to 5 custom-designed pages</li>
+                <li>Strategic page flow & content guidance</li>
+                <li>On-brand graphics and sections</li>
+                <li>2 rounds of revisions</li>
+                <li>Basic SEO setup (titles & descriptions)</li>
+              </ul>
+            </div>
+            <small>Ideal for growing brands ready to showcase services, portfolio, and booking options.</small>
+          </div>
+
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 3 · Premium</div>
+              <h3>Signature Brand Site</h3>
+              <div class="price">$1,250</div>
+              <p class="tier-desc">
+                Designed for established businesses—premium design, stronger calls-to-action, and a more robust site experience.
+              </p>
+              <ul>
+                <li>Up to 8 pages or sections</li>
+                <li>Custom visual elements & advanced layouts</li>
+                <li>Blog or resource hub setup</li>
+                <li>Conversion-focused calls-to-action</li>
+                <li>Launch support & post-launch walkthrough</li>
+              </ul>
+            </div>
+            <small>Designed for established brands needing a polished, conversion-ready online home.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Logo Design -->
+      <div id="logo-design" style="margin-bottom:3rem;">
+        <h3 class="section-title" style="font-size:1.1rem;">Logo Design Packages</h3>
+        <p class="section-subtitle">
+          Strategic, minimalist, or bold—each logo suite is tailored to your story and brand goals.
+        </p>
+
+        <div class="services-grid">
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 1 · Essential</div>
+              <h3>Logo Refresh</h3>
+              <div class="price">$175</div>
+              <p class="tier-desc">
+                Ideal for a quick upgrade—cleaner fonts, refined color choices, and a modernized look.
+              </p>
+              <ul>
+                <li>1 main logo concept</li>
+                <li>Basic font & color refinement</li>
+                <li>1 round of revisions</li>
+                <li>High-resolution PNG & JPG files</li>
+              </ul>
+            </div>
+            <small>Great for a simple update or modernizing an existing logo.</small>
+          </div>
+
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 2 · Standard</div>
+              <h3>Brand Mark Suite</h3>
+              <div class="price">$325</div>
+              <p class="tier-desc">
+                Built for new brands—multiple concepts, more logo variations, and clearer brand consistency.
+              </p>
+              <ul>
+                <li>2 custom logo concepts to choose from</li>
+                <li>Main logo + secondary logo</li>
+                <li>Color & black/white versions</li>
+                <li>Up to 2 rounds of revisions</li>
+                <li>Basic brand usage guide (1-page)</li>
+              </ul>
+            </div>
+            <small>Perfect for new businesses needing a strong visual identity across platforms.</small>
+          </div>
+
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 3 · Premium</div>
+              <h3>Full Visual Identity</h3>
+              <div class="price">$550</div>
+              <p class="tier-desc">
+                A complete identity system—logo suite plus supporting visuals for social, print, and brand clarity.
+              </p>
+              <ul>
+                <li>3 initial logo concepts</li>
+                <li>Main, secondary, and submark logos</li>
+                <li>Custom color palette & typography pairings</li>
+                <li>Social media profile & highlight icons</li>
+                <li>Mini brand guide PDF (usage, spacing, color codes)</li>
+              </ul>
+            </div>
+            <small>Best for brands ready for cohesive, long-term visuals across every channel.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Host Management -->
+      <div id="host-management">
+        <h3 class="section-title" style="font-size:1.1rem;">Website Host Management</h3>
+        <p class="section-subtitle">
+          Secure, monitored, and updated—so you can stop worrying about uptime and focus on your clients.
+        </p>
+
+        <div class="services-grid">
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 1 · Care</div>
+              <h3>Essential Hosting Support</h3>
+              <div class="price">$55 / month</div>
+              <p class="tier-desc">
+                Perfect for lean sites—basic monitoring and upkeep so your site stays healthy and online.
+              </p>
+              <ul>
+                <li>Domain & DNS monitoring</li>
+                <li>Platform updates (Wix/cPanel/AWS console)</li>
+                <li>Monthly site health check</li>
+                <li>Email support within 2–3 business days</li>
+              </ul>
+            </div>
+            <small>Hosting oversight for lean, low-maintenance sites.</small>
+          </div>
+
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 2 · Managed</div>
+              <h3>Managed Hosting & Updates</h3>
+              <div class="price">$95 / month</div>
+              <p class="tier-desc">
+                Great for active businesses—includes small monthly edits and faster support.
+              </p>
+              <ul>
+                <li>All Essential features</li>
+                <li>Up to 2 content edits per month</li>
+                <li>Performance and speed checks</li>
+                <li>Priority email support</li>
+              </ul>
+            </div>
+            <small>For owners who want steady support and light ongoing edits.</small>
+          </div>
+
+          <div class="pricing-card">
+            <div>
+              <div class="pricing-tag">Tier 3 · Pro</div>
+              <h3>Pro Hosting Management</h3>
+              <div class="price">$155 / month</div>
+              <p class="tier-desc">
+                A “digital team member” retainer—more edits, integration help, and proactive support.
+              </p>
+              <ul>
+                <li>All Managed features</li>
+                <li>Up to 4 content or design edits per month</li>
+                <li>Quarterly strategy check-ins</li>
+                <li>Tech integration support (forms, calendars, tools)</li>
+                <li>Priority issue escalation with hosting partners</li>
+              </ul>
+            </div>
+            <small>Perfect for active brands needing a digital “team member” on retainer.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Meet Amati Simmons</h2>
+          <div class="about-meta">
+            Lead Designer · Founder · Toledo, Ohio
+          </div>
+          <p>
+            Amati Simmons is the lead designer and founder of J&J Branding Co., a graphic arts and
+            media management studio based in Toledo, Ohio. With more than 10 years of experience in
+            digital design, branding, and web solutions, Amati brings both artistry and strategy to
+            every project.
+          </p>
+          <p>
+            J&J Branding Co. was established in 2019 with a clear focus: support small business owners
+            and entrepreneurs with visuals and digital systems that feel as intentional as the brands
+            behind them. From launch-day logos to full website overhauls, Amati walks clients through
+            each phase with clarity and care.
+          </p>
+          <p>
+            As a Canva, Wix, and AWS-certified partner, Amati blends user-friendly tools with powerful
+            infrastructure—creating designs that not only look beautiful but also perform reliably
+            behind the scenes.
+          </p>
+          <span class="about-highlight">Established 2019 · Toledo, OH</span>
+        </div>
+
+        <div class="about-photo">
+          <!-- ABOUT PHOTO 6.png -->
+          <img src="6.png" alt="Photo of lead designer Amati Simmons" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission" class="mission">
+    <div class="container">
+      <div class="mission-inner">
+        <h2>Mission Statement</h2>
+        <p>
+          At J&J Branding Co., our mission is to creatively execute and optimize digital and web
+          solutions that empower small business owners and entrepreneurs to show up with confidence
+          online. We believe that every brand—no matter its size—deserves a digital presence that
+          feels polished, personal, and purposeful.
+        </p>
+        <p>
+          Through strategic design, thoughtful user experience, and reliable hosting support, we help
+          clients move from “DIY and overwhelmed” to “supported and confident” in the way they present
+          their work to the world.
+        </p>
+        <p class="mission-quote">
+          “Design is how we tell your story—optimization is how we make sure people can truly
+          experience it.” – Amati Simmons
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Work With J&J Branding Co.</h2>
+      <p class="section-subtitle">
+        Ready to launch, refresh, or streamline your brand online? Share a few details below and
+        we’ll follow up with next steps and availability.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-details">
+          <p><strong>Based in:</strong> Toledo, Ohio · Serving clients virtually.</p>
+          <p><strong>Specialties:</strong> Website design, logo design, and website host management for small businesses and entrepreneurs.</p>
+          <p><strong>Platforms & Partnerships:</strong> Canva · Wix · AWS</p>
+          <p style="margin-top:1rem;">
+            Prefer email? You can adapt this section to include your direct email, phone number, or
+            booking link once the site is live.
+          </p>
+        </div>
+
+        <form>
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your full name" />
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" />
+
+          <label for="service">Interested In</label>
+          <select id="service">
+            <option value="">Select a service</option>
+            <option>Website Design</option>
+            <option>Logo Design</option>
+            <option>Website Host Management</option>
+            <option>Multiple Services / Not Sure</option>
+          </select>
+
+          <label for="message">Project Details</label>
+          <textarea id="message" placeholder="Share your business, goals, and ideal timeline."></textarea>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Inquiry (Demo Only)</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <span>J&J BRANDING CO.</span><br />
+      Graphic Arts + Media Management · Established 2019 · Toledo, Ohio<br />
+      <a href="mailto:info@jandjdesignco.com">Contact Now</a>
+    </div>
+  </footer>
+
+</body>
+</html>
